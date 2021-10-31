@@ -152,7 +152,7 @@ class ScanscreenState extends State<Scanscreen> {
     // TODO: 배송중 회송
     try {
       var client = http.Client();
-      var uri = Uri.parse('http://175.126.232.236:8987/bb');
+      var uri = Uri.parse('http://13.124.243.194:8987/bb');
       var uriResponse = await client.post(uri,
           headers: {"Content-Type": "application/x-www-form-urlencoded"},
           body: {"ZONE_NM": phoneNumber});
@@ -218,7 +218,7 @@ class ScanscreenState extends State<Scanscreen> {
 
   Future<String> sendtoServer(List<LogData> list, String devicename,
       int battery, String device_Name, int state, String destName) async {
-    Socket socket = await Socket.connect('175.126.232.236', 9982);
+    Socket socket = await Socket.connect('13.124.243.194', 9971);
     if (socket != null) {
       bool isOver = false;
       for (int i = 0; i < list.length; i += 5) {
@@ -265,7 +265,7 @@ class ScanscreenState extends State<Scanscreen> {
     print(currentLocation.latitude.toString() +
         '|' +
         currentLocation.longitude.toString());
-    Socket socket = await Socket.connect('175.126.232.236', 9982);
+    Socket socket = await Socket.connect('13.124.243.194', 9971);
     if (socket != null) {
       String body = '';
       body += phoneNumber +
@@ -1554,44 +1554,44 @@ class ScanscreenState extends State<Scanscreen> {
                                   )) //리스트 출력
                               )
                           : SizedBox(),
-                      Expanded(
-                          flex: beforeInit == false ? 4 : 9,
-                          child: Container(
-                              // margin: EdgeInsets.only(
-                              //   top: MediaQuery.of(context).size.width * 0.015,
-                              //   bottom: MediaQuery.of(context).size.width * 0.01,
-                              // ),
-                              child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image(
-                                image: AssetImage('images/background3.png'),
-                                fit: BoxFit.contain,
-                                width: MediaQuery.of(context).size.width * 0.12,
-                                // height: MediaQuery.of(context).size.width * 0.1,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '(주)옵티로',
-                                    style: boldTextStyle2,
-                                  ),
-                                  Text(
-                                    '인천광역시 연수구 송도미래로 30 스마트밸리 D동',
-                                    style: thinSmallTextStyle,
-                                  ),
-                                  Text(
-                                    'H : www.optilo.net  T : 070-5143-8585',
-                                    style: thinSmallTextStyle,
-                                  ),
-                                ],
-                              )
-                            ],
-                          )) //리스트 출력
-                          ),
+                      // Expanded(
+                      //     flex: beforeInit == false ? 4 : 9,
+                      //     child: Container(
+                      //         // margin: EdgeInsets.only(
+                      //         //   top: MediaQuery.of(context).size.width * 0.015,
+                      //         //   bottom: MediaQuery.of(context).size.width * 0.01,
+                      //         // ),
+                      //         child: Row(
+                      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      //       crossAxisAlignment: CrossAxisAlignment.center,
+                      //       children: [
+                      //         Image(
+                      //           image: AssetImage('images/background3.png'),
+                      //           fit: BoxFit.contain,
+                      //           width: MediaQuery.of(context).size.width * 0.12,
+                      //           // height: MediaQuery.of(context).size.width * 0.1,
+                      //         ),
+                      //         Column(
+                      //           crossAxisAlignment: CrossAxisAlignment.start,
+                      //           mainAxisAlignment: MainAxisAlignment.center,
+                      //           children: [
+                      //             Text(
+                      //               '(주)옵티로',
+                      //               style: boldTextStyle2,
+                      //             ),
+                      //             Text(
+                      //               '인천광역시 연수구 송도미래로 30 스마트밸리 D동',
+                      //               style: thinSmallTextStyle,
+                      //             ),
+                      //             Text(
+                      //               'H : www.optilo.net  T : 070-5143-8585',
+                      //               style: thinSmallTextStyle,
+                      //             ),
+                      //           ],
+                      //         )
+                      //       ],
+                      //     )) //리스트 출력
+                      //     ),
                     ],
                   ),
                 )),
@@ -2181,7 +2181,7 @@ showMyDialog_end(
                             int result = await returnYesOrNoDialog(context);
                             if (result == 1) {
                               Socket socket =
-                                  await Socket.connect('175.126.232.236', 9982);
+                                  await Socket.connect('13.124.243.194', 9971);
                               if (socket != null) {
                                 String body = '';
                                 body += devicename +
@@ -2276,7 +2276,7 @@ showMyDialog_end(
                           int result = await EndYesOrNoDialog(context);
                           if (result == 1) {
                             Socket socket =
-                                await Socket.connect('175.126.232.236', 9982);
+                                await Socket.connect('13.124.243.194', 9971);
                             if (socket != null) {
                               String body = '';
                               body += devicename +
